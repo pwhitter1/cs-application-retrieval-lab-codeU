@@ -43,6 +43,13 @@ public class WikiSearch {
 	}
 
 	/**
+	*  Returns the TF-IDF
+	**/
+	public Double getTFIDF (JedisIndex index, String url, String term) {
+			return index.getTermFrequency(url, term) * index.getInverseDocumentFrequency(map, term);
+	}
+
+	/**
 	 * Prints the contents in order of term frequency.
 	 *
 	 * @param map
